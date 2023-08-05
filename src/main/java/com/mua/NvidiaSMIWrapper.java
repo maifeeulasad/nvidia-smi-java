@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
  * - executeNvidiaSMI(Callback callback, int delaySecond): Continuously executes the 'nvidia-smi' command at a specified interval (*second*)
  * and provides the result via the provided callback.
  */
-public class NvidiaSMIExecutor {
+public class NvidiaSMIWrapper {
 
     /**
      * Continuously executes the 'nvidia-smi' command at a specified interval and provides the result via the provided callback.
