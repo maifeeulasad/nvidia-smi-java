@@ -9,6 +9,30 @@ import java.io.InputStreamReader;
 
 public class NvidiaSMIExecutor {
 
+    public static void executeNvidiaSMI(Callback callback, int delaySecond) {
+        new Thread(() -> {
+            try {
+                while (true) {
+                    executeNvidiaSMI(new Callback() {
+                        @Override
+                        public void onSuccess(JSONObject data) {
+                            callback.onSuccess(data);
+                        }
+
+                        @Override
+                        public void onError(String errorMessage) {
+                            callback.onError(errorMessage);
+                        }
+                    });
+
+                    Thread.sleep(delaySecond * 1000L);
+                }
+            } catch (Exception e) {
+                callback.onError(e.getMessage());
+            }
+        }).start();
+    }
+
     public static void executeNvidiaSMI(Callback callback) {
         try {
             ProcessBuilder processBuilder = new ProcessBuilder("nvidia-smi", "-q", "-x");
