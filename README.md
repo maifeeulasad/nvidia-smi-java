@@ -3,7 +3,7 @@
 ## Usage
 ### Just once
 ```java
-NvidiaSMIExecutor.executeNvidiaSMI(new NvidiaSMIExecutor.Callback() {
+NvidiaSMIWrapper.executeNvidiaSMI(new NvidiaSMIWrapper.Callback() {
 @Override
 public void onSuccess(JSONObject data) {
         System.out.println("Data: " + data);
@@ -17,7 +17,7 @@ public void onError(String errorMessage) {
 ```
 ### Every second
 ```java
-NvidiaSMIExecutor.executeNvidiaSMI(new NvidiaSMIExecutor.Callback() {
+NvidiaSMIWrapper.executeNvidiaSMI(new NvidiaSMIWrapper.Callback() {
     @Override
     public void onSuccess(JSONObject data) {
         System.out.println("Data: " + data);
