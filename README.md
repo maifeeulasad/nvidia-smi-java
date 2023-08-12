@@ -1,5 +1,7 @@
 # nvidia-smi-java
 
+![mvn-checkup status](https://github.com/maifeeulasad/nvidia-smi-java/actions/workflows/mvn-checkup.yml/badge.svg)
+
 ## Usage
 ### Just once
 ```java
